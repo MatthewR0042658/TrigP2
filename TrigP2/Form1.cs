@@ -21,32 +21,32 @@ namespace TrigP2
         {
 
         }
-            double sin(double x)
+            double sin(double x) //Working out for Sin
             {
                 return (Math.Sin(x * Math.PI / 180.0));
             }
 
-            double asin(double x)
+            double asin(double x) //Working out for sin^-1
             {
                 return (Math.Asin(x) * 180 / Math.PI);
             }
 
-            double cos(double x)
+            double cos(double x) //Working out for Cos
             {
                 return (Math.Cos(x * Math.PI / 180.0));
             }
 
-            double acos(double x)
+            double acos(double x) //Working out for cos^-1
             {
                 return (Math.Acos(x) * 180 / Math.PI);
             }
 
-            double tan(double x)
+            double tan(double x) //Working out for tan
             {
                 return (Math.Tan(x * Math.PI / 180.0));
             }
 
-            double atan(double x)
+            double atan(double x) //Working out for tan^-1
             {
                 return (Math.Atan(x) * 180 / Math.PI);
             }
@@ -59,27 +59,22 @@ namespace TrigP2
 
         }
 
-        private void Calculate_Click(object sender, EventArgs e)
+        private void Calculate_Click(object sender, EventArgs e) //This is the button so all code here is activated when the equals button is pressed.
         {
-            double Force = double.Parse(textBox1.Text);
-            double Angle = double.Parse(textBox3.Text);
-            double Fx = Force * cos(Angle);
-            double Fy = Force * sin(Angle);
-            label3.Text = "Fx = " + Fx.ToString("0.000");
-            label4.Text = "Fy = " + Fy.ToString("0.000");
-            try
-            {
+            try //Checks over the inputs to ensure that they are all capable of working with the code
+            { 
                 double Force = double.Parse(textBox1.Text);
                 double Angle = double.Parse(textBox3.Text);
-      
+                double Fx = Force * cos(Angle);
+                double Fy = Force * sin(Angle);
+                label3.Text = "Fx = " + Fx.ToString("0.000");
+                label4.Text = "Fy = " + Fy.ToString("0.000");
+            
             }
         
-            catch
+            catch //If not then this section of code outputs an error message for the user.
             {
-                MessageBox.Show(Force + " is not a correct input");
-                MessageBox.Show(Angle + " is not a a correct input");
-                MessageBox.Show(Fx + " is not a correct input");
-                MessageBox.Show(Fy + " is not a correct input");
+                MessageBox.Show("Error on input");
             }
             
             
